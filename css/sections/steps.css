@@ -1,0 +1,6 @@
+/* Шаги */
+/* steps */
+.st{cursor:pointer;display:block}
+.st:hover{transform:translateY(-6px)}
+.st .n{font-family:'Unbounded',sans-serif;font-size:40px;color:var(--acc);transition:transform .3s}
+.st:hover .n{transform:scale(1.15) rotate(-4deg)}

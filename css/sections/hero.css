@@ -1,0 +1,16 @@
+/* Первый экран, статистика, бегущая строка */
+/* hero */
+.hero{background:radial-gradient(900px 500px at 80% 20%,#2C5A3F55,transparent 60%),radial-gradient(700px 400px at 10% 90%,#C26A1B33,transparent 60%),var(--dk);color:#F4F0E6;padding-top:clamp(40px,6vw,72px)}
+.hero h1{font-size:clamp(38px,7vw,68px)}
+.hero h1 span{color:var(--acc2)}
+#hv{position:relative;height:min(520px,70vw);min-height:360px;border-radius:28px;overflow:hidden;background:linear-gradient(#BFDCEB,#E8F1EE 70%);box-shadow:0 30px 80px #0008}
+#hc{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+#hv .hint{position:absolute;top:14px;left:16px;font-size:12px;font-weight:700;color:#17261D99;letter-spacing:.08em}
+#hv .hb{position:absolute;left:10px;right:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px;background:#FFFE;border-radius:16px;padding:8px}
+#hv .hb button{min-height:34px;font-size:12px;padding:0 10px}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px}
+.stats b{display:block;font-family:'Unbounded',sans-serif;font-size:32px;color:var(--acc2)}
+.stats span{font-size:13px;color:#B9C8BD}
+.mq{overflow:hidden;background:var(--acc);color:#fff;white-space:nowrap}
+.mq div{display:inline-block;padding:14px 0;animation:mq 34s linear infinite;font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em}
+@keyframes mq{to{transform:translateX(-50%)}}

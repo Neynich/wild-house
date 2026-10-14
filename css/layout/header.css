@@ -1,0 +1,9 @@
+/* Шапка сайта и навигация */
+/* header */
+#hd{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:12px clamp(16px,3vw,40px);background:#F4F0E6E6;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+#hd .lg{font-size:19px}
+#hd nav{display:flex;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none}
+#hd nav a{padding:10px 12px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap;transition:background .2s}
+#hd nav a:hover{background:#17261D14}
+.ph{font-weight:700;white-space:nowrap;padding:10px 16px;border-radius:999px;background:var(--dk);color:#fff;font-size:14px;transition:transform .2s}
+.ph:hover{transform:scale(1.05)}

@@ -1,0 +1,4 @@
+/* Карточки */
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{box-shadow:0 14px 40px #17261D1F;border-color:var(--acc2)}
+.dk .card{background:var(--dk2);border-color:#2E4A3A;color:#F4F0E6}

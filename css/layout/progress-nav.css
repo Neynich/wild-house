@@ -1,0 +1,11 @@
+/* Шапка v2 и полоса прогресса */
+#hd{display:block;padding:0}
+#hd .hr{display:flex;align-items:center;gap:20px;padding:12px clamp(16px,3vw,40px)}
+#pg{display:flex;gap:6px;padding:0 clamp(16px,3vw,40px) 10px;overflow-x:auto;scrollbar-width:none}
+#pg a{white-space:nowrap;font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;background:#17261D12;color:var(--mut);transition:background .2s,transform .2s}
+#pg a:hover{transform:translateY(-2px)}
+#pg a.c{background:var(--acc);color:#fff}
+#pg a.d{background:#2C7A4B22;color:#2C7A4B}
+#sp{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--acc)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 112px)}
+#land,#map,#catalog,#consult,#support,#eco,#materials,#aid,#calc{scroll-margin-top:0}

@@ -1,0 +1,6 @@
+/* Поля форм */
+.in{width:100%;min-height:48px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.in:focus{outline:2px solid var(--acc);border-color:transparent}
+label.f{display:block;font-weight:700;font-size:13px;margin:14px 0 6px;color:var(--mut)}
+.dk .in{background:#12201A;border-color:#2E4A3A;color:#F4F0E6}
+.dk label.f{color:#B9C8BD}

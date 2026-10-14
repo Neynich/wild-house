@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WILD HOUSE — Создай свой дом</title>
+<script src="js/boot.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0F1F15">
+<meta name="apple-mobile-web-app-title" content="WILD HOUSE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="eb" style="display:none;position:fixed;top:0;left:0;right:0;z-index:999;background:#B3261E;color:#fff;padding:8px 12px;font-size:13px"></div>
+<header id="hd"><div class="hr">
+<a href="#top" class="h lg">WILD HOUSE</a>
+<nav><a href="#catalog">Каталог</a><a href="#materials">Материалы</a><a href="#land">Земля</a><a href="#map">Конструктор</a><a href="#aid">AI-дизайн</a><a href="#eco">ECO SMART</a><a href="#consult">Консультация</a><a href="#support">Поддержка</a><a href="#contacts">Контакты</a></nav>
+<a class="tg-ico" href="https://t.me/wildhousee" target="_blank" rel="noopener" aria-label="Наш Telegram-канал" title="Telegram-канал WILD HOUSE"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9-8.1c.4-.3-.1-.5-.6-.2L6.4 13 1.6 11.5c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5Z"/></svg></a>
+<a class="ph" href="tel:+79999777439"><span>8 (999) 977-74-39</span><b class="ph-m" style="font-weight:700"> Позвонить</b></a>
+<button id="acc" class="p">Войти</button>
+</div><div id="pg"></div><div id="sp"></div></header>
+
+<section id="top" class="hero">
+<div class="w gr" style="--m:340px;--gap:48px;align-items:center">
+<div>
+<div class="eyebrow">Конструктор реальных домов</div>
+<h1 class="h">СОЗДАЙ<br><span id="rw">СВОЙ ДОМ</span></h1>
+<p style="font-size:19px;line-height:1.6;margin:24px 0 32px;max-width:520px;color:#C9D6CC">Выберите землю в Подмосковье, соберите дом и участок в 3D, крутите и увеличивайте любые объекты — стоимость видна сразу.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px"><a href="#land" class="btn p">Создать мой дом</a><a href="#consult" class="btn o">Записаться на консультацию</a></div>
+<div class="stats"><div><b data-c="6">0</b><span>моделей домов</span></div><div><b data-c="15">0</b><span>районов Подмосковья</span></div><div><b data-c="24">0</b><span>типов объектов</span></div><div><b data-c="5">0</b><span>стилей фасада</span></div></div>
+</div>
+<div id="hv"><canvas id="hc"></canvas><canvas id="hc2" style="display:none"></canvas><div class="hint">ПОТЯНИТЕ, ЧТОБЫ ПОВЕРНУТЬ</div><div class="hb" id="hb"></div></div>
+</div>
+</section>
+<div class="mq"><div>КОНСТРУКТОР ДОМОВ · 3D-КАРТА УЧАСТКА · WILD AI · ECO SMART · WILD PARK · КОНСУЛЬТАЦИЯ ДИЗАЙНЕРА · КОНСУЛЬТАЦИЯ СТРОИТЕЛЕЙ · КОНСТРУКТОР ДОМОВ · 3D-КАРТА УЧАСТКА · WILD AI · ECO SMART · WILD PARK · КОНСУЛЬТАЦИЯ ДИЗАЙНЕРА · КОНСУЛЬТАЦИЯ СТРОИТЕЛЕЙ · </div></div>
+
+<section>
+<div class="w">
+<h2 class="h rv" style="margin-bottom:40px">Как это работает</h2>
+<div class="gr" style="--m:180px" id="steps"></div>
+</div>
+</section>
+
+<section id="catalog" style="background:#fff">
+<div class="w">
+<div class="eyebrow rv">Шаг 1 из 6 · Модель</div>
+<h2 class="h rv">Выберите основу вашего дома</h2>
+<p class="lead rv">Основа — это готовый проект, который вы потом измените как угодно: размер, этажи, материал, стиль. Не знаете, какой выбрать? Ответьте на два вопроса — мы подскажем.</p>
+<div class="card rv" style="background:var(--bg);margin-bottom:28px">
+<div class="gr" style="--m:260px;--gap:24px">
+<div><label class="f" style="margin-top:0">Сколько человек будет жить?</label><div class="chips" id="qppl"></div></div>
+<div><label class="f" style="margin-top:0">Бюджет на дом: <span id="qbv"></span></label><input type="range" id="qb" min="6" max="26" step="1" value="26"><div class="m" style="font-size:12px;margin-top:4px">Дома дороже бюджета станут бледнее</div></div>
+</div>
+<div id="qrec" style="margin-top:16px;font-weight:700;color:var(--acc)"></div>
+</div>
+<div class="m" style="font-size:12px;margin:-4px 0 6px">Картинки — 3D-визуализации примера дома в окружении участка. Дом можно изменить в конструкторе: размер, этажи, материал, цвета.</div><div class="m" id="pcap" style="font-size:13px;margin:-6px 0 16px"></div><div class="gr" id="models" style="--m:300px"></div>
+</div>
+</section>
+
+<section id="materials">
+<div class="w">
+<div class="eyebrow rv">Шаг 2 из 6 · Материал</div>
+<h2 class="h rv">Из чего построим ваш дом</h2>
+<p class="lead rv">Выберите материал стен: дом в 3D сразу сменит цвет, а цена пересчитается. Коэффициенты цены ориентировочные, точную смету даёт менеджер.</p>
+<div class="gr" id="mats"></div>
+</div>
+</section>
+
+<section id="land">
+<div class="w">
+<div class="eyebrow rv">Шаг 3 из 6 · Земля</div>
+<h2 class="h rv">Выберите землю</h2>
+<p class="lead rv">Укажите район Подмосковья, где вы хотите жить, и размер участка. Нажимайте на точки схемы или двигайте ползунок «не дальше N км».</p>
+<div class="gr" style="--m:340px;--gap:28px;align-items:start">
+<div class="card" id="lm" style="padding:12px;background:#F8F5EC"></div>
+<div>
+<div class="card">
+<div class="eyebrow" style="margin-bottom:8px">Ваш район</div>
+<div class="h" id="ln" style="font-size:28px;margin-bottom:8px"></div>
+<div class="m" id="ld"></div><div id="lpr" class="pbox"></div>
+<label class="f">Не дальше от Москвы: <span id="kmv"></span></label>
+<input type="range" id="kmr" min="30" max="130" step="5" value="130">
+<div class="m" id="lcnt" style="font-size:13px;margin-top:4px"></div>
+<label class="f" style="margin-top:18px">Размер участка</label>
+<div class="chips" id="ps"></div>
+<button id="mine" style="margin-top:12px;width:100%">У меня уже есть свой участок</button>
+<div id="myp" style="display:none;margin-top:12px"><div class="gr" style="--m:110px;--gap:10px"><div><label class="f" style="margin-top:0">Ширина, м</label><input class="in" id="mw1" type="number" min="15" max="90" value="40"></div><div><label class="f" style="margin-top:0">Длина, м</label><input class="in" id="md1" type="number" min="15" max="90" value="30"></div></div><button id="mok" class="p" style="margin-top:10px;width:100%">Применить размеры</button></div>
+<a href="#map" class="btn p" style="margin-top:22px;display:block">Расставить дом на участке</a>
+</div>
+<div style="font-weight:700;margin:22px 0 10px">Все районы</div><div class="chips" id="lc"></div>
+<p class="m" style="font-size:13px;margin-top:16px">Это схема: границы области, расстояния и время в пути приблизительные. Точки показывают направления, где можно искать землю; конкретные участки и цены на землю уточняет менеджер.</p>
+</div></div></div></section>
+
+<section id="map" style="background:#fff">
+<div class="w">
+<div class="eyebrow rv">Шаг 4 из 6 · Конструктор</div>
+<h2 class="h rv">3D-конструктор участка</h2>
+<p class="lead rv" style="margin-bottom:10px">Перетаскивайте дом и объекты, вращайте на любой угол, увеличивайте и уменьшайте, меняйте стиль и этажность. Мышь: левая кнопка — вращение, правая — сдвиг, колесо — масштаб, двойной клик — приблизить. Телефон: один палец — вращение, два пальца — масштаб и сдвиг; страницу прокручивайте за пределами карты.</p>
+<div id="mapinfo" style="font-weight:700;margin-bottom:14px"></div>
+<div class="note"><b>Важно: расстановка и размеры объектов на карте приблизительные.</b> Так вы видите, что где примерно будет стоять. Точное положение, отступы от границ и размеры утверждаются в проекте после замеров участка и консультации с архитектором.</div>
+<div id="mw">
+<canvas id="c"></canvas><canvas id="c2"></canvas>
+<div id="nogl">3D-карта недоступна в этом браузере.<br>Откройте сайт в Safari или Chrome.</div>
+<div id="coach"><div class="cb"><button class="xb" id="coachc" aria-label="Закрыть подсказку">✕</button><b>Как управлять картой</b><ol><li>Тяните пустое место — вращение, колесо или щипок — масштаб</li><li>Правая кнопка мыши или два пальца — сдвиг карты</li><li>Нажмите на объект и тяните, чтобы переставить</li><li>Двойной клик — приблизить к месту или объекту</li></ol><div class="ks">Клавиши: стрелки или WASD — сдвиг, Q/E — поворот вида, R — повернуть объект, [ ] — размер, Del — удалить, T — вид сверху, F — весь экран, H — сбросить вид, Esc — закрыть окно</div><button id="coachx" class="p" style="width:100%">Понятно</button></div></div>
+<div id="tools"><button id="rot" disabled>+15°</button><button id="lite">Лёгкий режим</button><button id="tv">Вид сверху</button><div class="z"><button id="zi" aria-label="Приблизить">+</button><button id="zo" aria-label="Отдалить">−</button></div><div class="z"><button id="home" aria-label="Сбросить вид" title="Сбросить вид (H)">⌂</button><button id="fsb" aria-label="На весь экран" title="На весь экран (F)">⛶</button><button id="hlp" aria-label="Подсказки по управлению" title="Подсказки">?</button></div></div>
+<div id="sbar" role="toolbar" aria-label="Выбранный объект"><span class="nm" id="sbnm"></span><button id="sb_l" title="Повернуть −15° (Shift+R)" aria-label="Повернуть влево">⟲</button><button id="sb_r" title="Повернуть +15° (R)" aria-label="Повернуть вправо">⟳</button><span class="sep"></span><button id="sb_m" title="Меньше ([)" aria-label="Уменьшить">−</button><button id="sb_p" title="Больше (])" aria-label="Увеличить">+</button><span class="sep"></span><button id="sb_f" title="Приблизить к объекту (двойной клик)" aria-label="Показать объект">◎</button><button id="sb_d" title="Удалить (Del)" aria-label="Удалить объект">🗑</button></div>
+<div id="toast"></div>
+<div id="pill"><div><small style="color:var(--mut)">Итого с землёй</small><div id="tot"></div><div id="tsub" style="font-size:11px;color:var(--mut);margin-top:2px"></div></div><button class="p" id="est">Смета</button></div>
+<div id="ov"><div class="b"><button class="xb" id="ovx" aria-label="Закрыть смету">✕</button><div id="lst"></div><p style="font-size:13px;color:var(--mut);line-height:1.5;margin:10px 0 14px">Предварительная стоимость: цена земли ориентировочная, считается по району. Расстановка объектов на карте приблизительная: точное положение и размеры утверждает архитектор. Точную смету подтверждает менеджер.</p><button class="p" id="cl" style="width:100%">Закрыть</button></div></div>
+</div>
+<div id="entr" class="card" style="margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;justify-content:space-between;background:var(--dk);color:#F4F0E6;border-color:var(--dk)"><div style="flex:1 1 260px"><div class="h" style="font-size:20px;margin-bottom:6px">Дом расставлен — зайдите внутрь</div><div class="m" style="color:#B9C8BD;font-size:14px">Пройдитесь по комнатам вашей модели, поменяйте цвет стен и пол, выберите лестницу, а затем расставьте мебель.</div></div><div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn p" id="tourb">Войти в дом</button></div></div>
+<div class="gr ctl" style="--m:290px;margin-top:20px">
+<div class="card">
+<h3>Выбранный объект</h3>
+<div id="selname" style="font-weight:700;margin-bottom:10px">Выберите объект на карте</div>
+<label class="f" style="margin-top:0">Поворот <span id="av"></span></label>
+<input type="range" id="ang" min="0" max="355" step="5" value="0" disabled>
+<label class="f">Размер <span id="sv"></span></label>
+<input type="range" id="scl" min="0.5" max="2" step="0.05" value="1" disabled>
+<label class="f">Цвет: <span id="cl1n">—</span></label><div class="sws" id="cs1"></div>
+<label class="f">Цвет: <span id="cl2n">—</span></label><div class="sws" id="cs2"></div>
+<button id="clr" disabled style="margin-top:12px;width:100%">Вернуть цвета по умолчанию</button>
+<button id="del" disabled style="margin-top:10px;width:100%">Удалить объект</button>
+</div>
+<div class="card">
+<h3>Дом</h3>
+<label class="f" style="margin-top:0">Модель</label><div class="chips" id="mchips"></div>
+<label class="f">Этажность</label><div class="chips"><button id="f1" class="on">1 этаж</button><button id="f2">2 этажа +2,5 млн ₽</button></div>
+<label class="f">Терраса (доплата)</label><div class="chips" id="trc"></div>
+<label class="f">Стиль</label><div class="chips" id="schips"></div><div class="m" id="sdesc" style="font-size:13px;margin-top:8px"></div>
+<label class="f">Материал стен</label><div class="chips" id="mtchips"></div>
+</div>
+<div class="card">
+<h3>Добавить на участок</h3>
+<div id="pal"></div>
+</div>
+<div class="card">
+<h3>Забор</h3>
+<div class="chips" id="fnc"></div><div class="m" id="fni" style="font-size:13px;margin-top:10px"></div>
+</div>
+<div class="card">
+<h3>Финальный вид</h3>
+<label class="f" style="margin-top:0">Этап строительства</label><div class="chips" id="stg"></div>
+<label class="f">Время суток</label><div class="chips" id="tdc"></div>
+<button id="lsb" class="on" style="margin-top:14px;width:100%">Озеленение: вкл</button>
+<button id="rnd" style="margin-top:10px;width:100%">Удиви меня</button>
+</div>
+<div class="card">
+<h3>Проект</h3>
+<div style="display:flex;flex-direction:column;gap:10px">
+<button id="aiBtn">WILD AI: проверить проект</button>
+<button id="sv_proj">Сохранить в кабинет</button>
+<button id="shb">Поделиться / открыть по коду</button>
+<button id="ord" class="p">Заказать строительство</button>
+</div>
+<div id="aibox"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="aid" style="background:linear-gradient(#fff,#F4F0E6)">
+<div class="w">
+<div class="eyebrow rv">Шаг 5 из 6 · AI-дизайн</div>
+<h2 class="h rv">AI-дизайн: каким дом станет в конце стройки</h2>
+<p class="lead rv">Расскажите, как вы хотите жить. WILD AI предложит стиль, материал, интерьер и ландшафт и сразу покажет готовый дом в 3D — от фундамента до заката.</p>
+<div class="gr" style="--m:340px;--gap:24px;align-items:start">
+<div class="card rv">
+<label class="f" style="margin-top:0">Как вы живёте</label>
+<div class="chips" id="aiLife"><button class="on" data-v="Семья с детьми">Семья с детьми</button><button data-v="Отдых и гости">Отдых и гости</button><button data-v="Тишина и минимализм">Тишина и минимализм</button><button data-v="Эко и энергонезависимость">Эко</button></div>
+<label class="f">Настроение дома</label>
+<div class="chips" id="aiMood"><button class="on" data-v="Тёплое и уютное">Тёплое и уютное</button><button data-v="Строгое современное">Строгое современное</button><button data-v="Природное">Природное</button><button data-v="Премиальное">Премиальное</button></div>
+<label class="f">Ваши пожелания</label>
+<textarea class="in" id="aiWish" rows="3" maxlength="300" placeholder="Например: большая кухня-гостиная, панорамные окна на сад"></textarea>
+<button class="btn p" id="aiGo" style="width:100%;margin-top:18px">Создать AI-дизайн</button>
+</div>
+<div class="card rv" id="aiRes"><div class="m">Выберите образ жизни и настроение и нажмите «Создать AI-дизайн». Здесь появится концепция готового дома, а в 3D-карте дом сменит стиль и материал.</div></div>
+</div>
+</div>
+</section>
+
+<section id="calc" class="dk">
+<div class="w gr" style="--m:340px;--gap:40px;align-items:center">
+<div class="rv"><div class="eyebrow">Платёж в месяц</div><h2 class="h">Сколько это в месяц</h2><p class="lead">Примерный расчёт по вашему проекту. Это не предложение банка, а ориентир: ставку и срок можно менять.</p><div class="h" id="pay" style="font-size:clamp(32px,6vw,52px);color:var(--acc2)"></div><div class="m" id="paysub" style="margin-top:8px"></div></div>
+<div class="card rv">
+<label class="f" style="margin-top:0">Дом, объекты и забор: <b id="cc_cost"></b></label>
+<label class="f">Стоимость земли, ₽ (посчитана по району, можно изменить)</label><input class="in" id="cc_land" type="number" value="0" min="0" step="100000">
+<label class="f">Первый взнос: <span id="cc_dv"></span></label><input type="range" id="cc_d" min="0" max="80" step="5" value="20">
+<label class="f">Срок: <span id="cc_yv"></span></label><input type="range" id="cc_y" min="3" max="30" step="1" value="20">
+<label class="f">Ставка, % годовых</label><input class="in" id="cc_r" type="number" value="12" step="0.5" min="0" max="40">
+</div>
+</div>
+</section>
+
+<section class="dk" id="ai">
+<div class="w gr" style="--m:320px;--gap:48px;align-items:center">
+<div class="rv"><div class="eyebrow">WILD AI</div><h2 class="h">Следит, чтобы невозможное не попало в проект</h2><p class="lead" style="margin-bottom:0">Это не генератор картинок, а помощник внутри реальной строительной системы. Нажмите «WILD AI: проверить проект» в конструкторе, чтобы получить советы по вашей расстановке.</p><a href="#map" class="btn p" style="margin-top:24px">Попробовать в конструкторе</a></div>
+<div style="display:flex;flex-direction:column;gap:14px" class="rv">
+<div class="card"><b>Бассейн вплотную к дому</b><p class="m" style="margin-top:8px">Размещение невозможно из-за требований к расстоянию. Предлагаем переместить на 3,5 м.</p></div>
+<div class="card"><b>Слишком большое остекление</b><p class="m" style="margin-top:8px">Нужна усиленная конструкция: +180 000 ₽.</p></div>
+<div class="card"><b>Оптимизация</b><p class="m" style="margin-top:8px">Другое расположение дома повысит эффективность солнечных панелей.</p></div>
+</div>
+</div>
+</section>
+
+<section id="eco">
+<div class="w">
+<div class="eyebrow rv">WILD ECO SMART</div>
+<h2 class="h rv">Умный дом, которым хочется управлять</h2>
+<p class="lead rv">Пример интерфейса управления домом после строительства. Переключайте время суток и системы — всё живое.</p>
+<div class="card dk rv" style="background:var(--dk);padding:28px">
+<div class="chips" style="margin-bottom:22px" id="tod"><button data-t="day" class="on">День</button><button data-t="eve">Вечер</button><button data-t="night">Ночь</button></div>
+<div class="gr met" style="--m:150px">
+<div><span class="m">Температура</span><b id="e1"></b></div><div><span class="m">Производство энергии</span><b id="e2"></b></div>
+<div><span class="m">Заряд батареи</span><b id="e3"></b><div class="bar"><i id="eb"></i></div></div><div><span class="m">Расход электричества</span><b id="e4"></b></div>
+<div><span class="m">Расход воды</span><b id="e5"></b></div><div><span class="m">Качество воздуха</span><b id="e6"></b></div>
+</div>
+<div class="gr" style="--m:150px;margin-top:22px;--gap:10px" id="sws"></div>
+</div>
+</div>
+</section>
+
+<section id="park" style="background:#E8E1D0">
+<div class="w gr" style="--m:320px;--gap:28px">
+<div class="card rv"><h2 class="h" style="font-size:26px;margin-bottom:18px">Стройка под контролем</h2><div id="trk"></div><p class="m" style="margin-top:14px">Фото и видео со стройки — в приложении. Нажмите на этап, чтобы продвинуть его.</p></div>
+<div class="card rv"><h2 class="h" style="font-size:26px;margin-bottom:18px">WILD PARK</h2><p class="m">Коттеджные посёлки WILD HOUSE. Расположение, свободные дома и цены, инфраструктура: бассейн, спортзал, кафе, детские зоны, парковки, прогулочные зоны. Выбирайте дом прямо на карте посёлка.</p><a href="#land" class="btn p" style="margin-top:20px">Выбрать район</a></div>
+</div>
+</section>
+
+<section id="consult" class="dk">
+<div class="w gr" style="--m:340px;--gap:48px;align-items:start">
+<div class="rv">
+<div class="eyebrow">Шаг 6 из 6 · Консультация</div>
+<h2 class="h">Обсудите дом с дизайнером и строителями</h2>
+<p class="lead">Запишитесь на встречу: расскажем про проект, посчитаем смету, подберём материалы и сроки.</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="card"><b>Горячая линия</b><div class="h" style="font-size:26px;margin-top:8px"><a href="tel:+79999777439">8 (999) 977-74-39</a></div></div>
+<div class="card"><b>Офис WILD HOUSE</b><p class="m" style="margin-top:8px">г. Москва, ул. Тверская, д. 15, офис 301<br>Пн–Пт 9:00–20:00, Сб 10:00–18:00</p></div>
+</div>
+</div>
+<div class="card rv" style="background:#fff;color:var(--ink)">
+<h3 class="h" style="font-size:22px;margin-bottom:6px">Запись на консультацию</h3>
+<label class="f">С кем хотите поговорить</label>
+<div class="chips" id="bkk"><button data-v="Дизайнер" class="on">Дизайнер</button><button data-v="Строители">Строители</button><button data-v="Дизайнер и строители">Оба</button></div>
+<label class="f">Имя</label><input class="in" id="bk_n" placeholder="Как к вам обращаться">
+<label class="f">Телефон</label><input class="in" id="bk_p" type="tel" placeholder="8 (999) 000-00-00">
+<div class="gr" style="--m:130px;--gap:10px"><div><label class="f">Дата</label><input class="in" id="bk_d" type="date"></div><div><label class="f">Время</label><select class="in" id="bk_t"></select></div></div>
+<label class="f">Что обсудим</label><textarea class="in" id="bk_c" rows="3" placeholder="Например: дом 2 этажа на 12 сотках, Истра"></textarea>
+<button class="btn p" id="bk_go" style="width:100%;margin-top:18px">Записаться</button>
+<p class="m" style="font-size:12px;margin-top:10px">Для быстрого ответа позвоните на горячую линию 8 (999) 977-74-39.</p>
+</div>
+</div>
+</section>
+
+<section id="support">
+<div class="w gr" style="--m:340px;--gap:40px;align-items:start">
+<div class="rv">
+<div class="eyebrow">Техподдержка</div>
+<h2 class="h" style="margin-bottom:24px">Частые вопросы</h2>
+<details><summary>Как считается стоимость?</summary><p>Цена складывается из дома (по площади), этажности и выбранных объектов с учётом их размера. Это предварительная оценка, точную смету подтверждает менеджер.</p></details>
+<details><summary>Можно ли ставить объекты под любым углом?</summary><p>Да. Выберите объект на карте и крутите ползунок «Поворот». WILD AI проверит, что всё помещается и соблюдены расстояния.</p></details>
+<details><summary>Можно ли изменить размер дома и объектов?</summary><p>Да, у каждого объекта есть ползунок «Размер». Для дома можно выбрать модель или подогнать площадь вручную.</p></details>
+<details><summary>Нужна ли регистрация?</summary><p>Чтобы смотреть и собирать дом, регистрация не нужна. Кабинет нужен, чтобы сохранять проекты и оформлять заявку.</p></details>
+<details><summary>Когда появится AR?</summary><p>Режим дополненной реальности — в планах: вы наведёте камеру на свой участок и увидите дом на реальном месте.</p></details>
+<details><summary>Как связаться быстрее всего?</summary><p>Позвоните на горячую линию 8 (999) 977-74-39 или запишитесь на консультацию ниже по странице.</p></details>
+</div>
+<div class="card rv">
+<h3 class="h" style="font-size:22px;margin-bottom:6px">Написать в поддержку</h3>
+<label class="f">Тема</label><select class="in" id="sp_t"><option>Вопрос по конструктору</option><option>Вопрос по стоимости</option><option>Проблема с кабинетом</option><option>Другое</option></select>
+<label class="f">Имя</label><input class="in" id="sp_n">
+<label class="f">Телефон</label><input class="in" id="sp_p" type="tel">
+<label class="f">Сообщение</label><textarea class="in" id="sp_m" rows="4"></textarea>
+<button class="btn p" id="sp_go" style="width:100%;margin-top:18px">Отправить обращение</button>
+<a class="btn o" href="tel:+79999777439" style="display:block;margin-top:10px">Позвонить на горячую линию</a>
+</div>
+</div>
+</section>
+
+<section id="contacts" class="dk" style="padding-top:64px;padding-bottom:64px;text-align:center">
+<div class="w rv">
+<h2 class="h" style="font-size:clamp(28px,5vw,46px)">Человек сам собирает дом своей мечты</h2>
+<p class="lead" style="margin:20px auto 32px">В 3D, с видимой стоимостью — и заказывает строительство.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center"><a href="#land" class="btn p">Создать мой дом</a><a href="tel:+79999777439" class="btn o">8 (999) 977-74-39</a></div>
+<a class="tg-card" href="https://t.me/wildhousee" target="_blank" rel="noopener">
+<span class="tg-logo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9-8.1c.4-.3-.1-.5-.6-.2L6.4 13 1.6 11.5c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5Z"/></svg></span>
+<span class="tg-txt"><b>Мы в Telegram · @wildhousee</b><span>Новые проекты, ход строительства и акции — первыми в нашем канале</span></span>
+<span class="tg-go">Подписаться</span>
+</a>
+<p class="m" style="margin-top:36px;font-size:14px">г. Москва, ул. Тверская, д. 15, офис 301 · Горячая линия 8 (999) 977-74-39</p>
+<div class="h" style="margin-top:28px;font-size:16px;opacity:.55">WILD HOUSE — СОЗДАЙ СВОЙ ДОМ</div>
+</div>
+</section>
+
+<div class="md" id="au"><div class="mb">
+<div class="chips" style="margin-bottom:6px"><button id="t_reg" class="on">Регистрация</button><button id="t_in">Вход</button></div>
+<h3 class="h" style="font-size:22px;margin:14px 0 4px" id="au_h">Создайте кабинет</h3>
+<p class="m" id="au_s" style="font-size:14px"></p>
+<div id="au_r"><label class="f">Имя</label><input class="in" id="au_n"><label class="f">Email</label><input class="in" id="au_e" type="email"></div>
+<label class="f">Телефон</label><input class="in" id="au_p" type="tel" placeholder="8 (999) 000-00-00">
+<label style="display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13px;color:var(--mut);line-height:1.4"><input type="checkbox" id="au_ok" style="margin-top:3px"> Согласен на обработку персональных данных</label>
+<button class="btn p" id="au_go" style="width:100%;margin-top:18px">Создать кабинет</button>
+<button id="au_x" style="width:100%;margin-top:8px">Закрыть</button>
+</div></div>
+
+<div class="md" id="od"><div class="mb">
+<h3 class="h" style="font-size:22px;margin-bottom:12px">Заявка на строительство</h3>
+<div id="od_l"></div><p class="m" style="font-size:12px;margin-top:10px">Расстановка объектов на карте приблизительная: точное положение, отступы и размеры утверждаются в проекте после замеров участка.</p>
+<label class="f">Телефон</label><input class="in" id="od_p" type="tel">
+<label class="f">Комментарий</label><textarea class="in" id="od_c" rows="3"></textarea>
+<button class="btn p" id="od_go" style="width:100%;margin-top:16px">Оформить заявку</button>
+<button id="od_x" style="width:100%;margin-top:8px">Закрыть</button>
+</div></div>
+
+<div class="md" id="shm"><div class="mb">
+<h3 class="h" style="font-size:22px;margin-bottom:8px">Поделиться проектом</h3>
+<p class="m" style="font-size:14px;line-height:1.5;margin-bottom:12px">Обычная ссылка не передаёт расстановку: другой человек увидит пустой участок. Поэтому отправьте ссылку на сайт вместе с кодом проекта. Получатель вставит код ниже, и карта станет такой же: участок, объекты, цвета, размеры.</p>
+<label class="f" style="margin-top:0">Сообщение для отправки</label>
+<textarea class="in" id="sh_t" rows="6" readonly></textarea>
+<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="p" id="sh_c" style="flex:1">Скопировать</button><button id="sh_s" style="flex:1">Отправить…</button></div>
+<div style="border-top:1px solid var(--line);margin:20px 0"></div>
+<label class="f" style="margin-top:0">Получили код? Вставьте сюда</label>
+<textarea class="in" id="sh_i" rows="3" placeholder="W2.…"></textarea>
+<button class="btn p" id="sh_l" style="width:100%;margin-top:10px">Открыть проект</button>
+<button id="sh_x" style="width:100%;margin-top:8px">Закрыть</button>
+</div></div>
+
+<aside id="dr"><div style="display:flex;justify-content:space-between;align-items:center"><h3 class="h" style="font-size:22px">Мой кабинет</h3><button id="dr_x">Закрыть</button></div><div id="dr_b"></div></aside>
+<button id="fab" aria-label="Горячая линия">Горячая линия</button>
+<div class="md" id="cm"><div class="mb" style="text-align:center"><div class="eyebrow">Горячая линия</div><div class="h" style="font-size:30px;margin:8px 0 6px">8 (999) 977-74-39</div><p class="m" style="font-size:14px;margin-bottom:18px">Позвоните, и мы ответим на вопросы по дому, участку и консультации.</p><a class="btn p" href="tel:+79999777439" style="display:block">Позвонить</a><button id="cp" style="width:100%;margin-top:10px">Скопировать номер</button><button id="cm_x" style="width:100%;margin-top:8px">Закрыть</button></div></div>
+<button id="chb" aria-label="Открыть чат поддержки"><span class="chd"></span>Чат</button>
+<div id="chat" role="dialog" aria-label="Чат поддержки WILD HOUSE" aria-hidden="true">
+<div class="chh"><div><b>Поддержка WILD HOUSE</b><small>Бот-помощник · отвечаю на базовые вопросы</small></div><div style="display:flex;gap:6px"><button id="chc" aria-label="Очистить переписку" title="Очистить">Очистить</button><button id="chx" aria-label="Закрыть чат">✕</button></div></div>
+<div id="chm" aria-live="polite"></div>
+<div id="chq"></div>
+<form id="chf" autocomplete="off"><input id="chi" placeholder="Напишите вопрос…" maxlength="300" aria-label="Ваш вопрос"><button id="chs" class="p" type="submit">Отправить</button></form>
+<div class="chn">Я бот и могу ошибаться. Сложные вопросы лучше обсудить по горячей линии 8 (999) 977-74-39.</div>
+</div>
+<div id="sn"></div>
+
+<div id="tour" aria-label="3D-прогулка по дому"><canvas id="tcv"></canvas>
+<div id="thint">Тяните — осмотр · клик по полу — идти туда · колесо — приближение · клик по мини-карте — перейти · WASD / стрелки — ходьба · Shift — бег · E — лестница · H — панель дизайна · Esc — скрыть панель / выйти</div>
+<canvas id="tmap" width="190" height="130"></canvas>
+<div id="tp"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h3 class="h" id="th" style="font-size:17px"></h3><div style="display:flex;gap:6px;align-items:center"><button id="tmin" class="xb2" aria-label="Скрыть панель дизайна" title="Скрыть панель (H)">✕</button><button id="tx" class="p" aria-label="Выйти из прогулки">Выйти</button></div></div><small id="ti"></small><div id="tbody"></div></div>
+<button id="topen" class="p" aria-label="Показать панель дизайна">🎨 Дизайн</button><button id="tgo" class="p"></button><div id="joy"><i></i></div><button id="trun" aria-label="Бег">Бег</button><div id="tfade"></div></div>
+
+<!-- Библиотека 3D -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- Данные и утилиты -->
+<script src="js/data/images.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/data/catalog-data.js"></script>
+<script src="js/three/primitives.js"></script>
+<script src="js/three/house-spec.js"></script>
+<script src="js/three/builder.js"></script>
+<script src="js/ui/feedback.js"></script>
+<script src="js/scenes/hero-scene.js"></script>
+<script src="js/scenes/map-scene.js"></script>
+<script src="js/scenes/sky.js"></script>
+<script src="js/scenes/world.js"></script>
+<script src="js/scenes/plot.js"></script>
+<script src="js/builder/placement.js"></script>
+<script src="js/builder/models.js"></script>
+<script src="js/scenes/camera.js"></script>
+<script src="js/builder/interaction.js"></script>
+<script src="js/ui/object-panel.js"></script>
+<script src="js/features/wild-ai.js"></script>
+<script src="js/features/land.js"></script>
+<script src="js/features/catalog.js"></script>
+<script src="js/features/materials.js"></script>
+<script src="js/features/call.js"></script>
+<script src="js/features/ai-design.js"></script>
+<script src="js/scenes/lite-renderer.js"></script>
+<script src="js/builder/object-colors.js"></script>
+<script src="js/features/share-autosave.js"></script>
+<script src="js/builder/fence-terrace.js"></script>
+<script src="js/features/progress-coach.js"></script>
+<script src="js/features/eco-tracker.js"></script>
+<script src="js/features/account.js"></script>
+<script src="js/features/booking-support.js"></script>
+<script src="js/ui/effects.js"></script>
+<script src="js/features/support-chat.js"></script>
+<script src="js/main.js"></script>
+<script src="js/tour/interior-tour.js"></script>
+</body>
+</html>

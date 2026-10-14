@@ -1,0 +1,13 @@
+/* Кнопки и чипы */
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;font:inherit;font-weight:700;font-size:16px;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px #C26A1B55}
+.btn:active{transform:translateY(0)}
+.p{background:var(--acc);color:#fff}
+.o{border-color:currentColor}
+button{font:inherit;font-weight:700;font-size:14px;min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+button:hover:not(:disabled){transform:translateY(-2px);border-color:var(--acc)}
+button:disabled{opacity:.4;cursor:default}
+button.on{background:var(--dk);color:#fff;border-color:var(--dk)}
+button.p{background:var(--acc);color:#fff;border-color:var(--acc)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{min-height:40px;font-size:13px;padding:0 14px}

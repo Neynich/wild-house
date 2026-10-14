@@ -1,0 +1,19 @@
+/* Telegram: кнопка в шапке и карточка канала в контактах */
+.tg-ico{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#229ED9;color:#fff;transition:transform .2s,box-shadow .2s}
+.tg-ico:hover{transform:scale(1.08);box-shadow:0 8px 20px #229ED955}
+.tg-ico svg{width:22px;height:22px;display:block;margin-left:-2px}
+
+.tg-card{display:flex;align-items:center;gap:18px;max-width:560px;margin:34px auto 0;padding:18px 22px;border-radius:24px;text-align:left;color:#F4F0E6;background:linear-gradient(135deg,#1D3126,#173A33);border:1px solid #2E4A3A;transition:transform .25s,box-shadow .25s,border-color .25s}
+.tg-card:hover{transform:translateY(-4px);border-color:#229ED9;box-shadow:0 16px 40px #229ED933}
+.tg-card .tg-logo{flex:none;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#37AEE2,#1E96C8);box-shadow:0 8px 22px #229ED966}
+.tg-card .tg-logo svg{width:32px;height:32px;margin-left:-3px}
+.tg-card .tg-txt{flex:1;min-width:0}
+.tg-card .tg-txt b{display:block;font-family:'Unbounded',sans-serif;font-size:16px;line-height:1.25}
+.tg-card .tg-txt span{display:block;margin-top:5px;font-size:13px;line-height:1.45;color:#B9C8BD}
+.tg-card .tg-go{flex:none;padding:11px 18px;border-radius:999px;background:#229ED9;color:#fff;font-weight:700;font-size:14px;white-space:nowrap}
+@media(max-width:560px){.tg-card{flex-wrap:wrap;padding:16px}.tg-card .tg-go{width:100%;text-align:center}}
+@media(max-width:760px){#hd .tg-ico{width:40px;height:40px}}
+
+/* Компактная шапка, чтобы иконка Telegram не вытесняла меню */
+@media(max-width:1400px){#hd .hr{gap:12px}#hd nav a{padding:10px 9px}}
+@media(max-width:560px){#hd .hr{gap:8px}#hd nav{display:none}#hd .ph{margin-left:auto}#hd .lg{font-size:15px;white-space:nowrap}#hd .tg-ico{width:36px;height:36px}#hd .tg-ico svg{width:18px;height:18px}#hd .ph{padding:10px 12px;font-size:13px}#hd #acc{padding:0 14px}}

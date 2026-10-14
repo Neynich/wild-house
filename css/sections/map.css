@@ -1,0 +1,19 @@
+/* 3D-конструктор участка */
+/* map */
+#mw{position:relative;height:min(78vh,640px);min-height:480px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#CFE3EE}
+#c{position:absolute;inset:0;width:100%;height:100%;touch-action:none;display:block}
+#tools{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:8px}
+#tools button,#pill button{background:#FFFE}
+#tools .z{display:flex;gap:8px}#tools .z button{flex:1;padding:0}
+#pill{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:10px;background:#FFFE;border:1px solid var(--line);border-radius:16px;padding:8px 8px 8px 14px}
+#tot{font-family:'Unbounded',sans-serif;font-size:17px}
+#toast{position:absolute;left:10px;top:10px;right:130px;max-width:380px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:14px;line-height:1.4;display:none}
+#toast.w{border-color:var(--bad);color:var(--bad)}
+#ov{position:absolute;inset:0;background:#000A;display:none;align-items:center;justify-content:center;padding:16px}
+#ov .b{background:var(--bg);border-radius:20px;padding:22px;max-width:440px;width:100%;max-height:92%;overflow:auto}
+.r{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+.ctl .card{padding:20px}
+.ctl h3{font-family:'Unbounded',sans-serif;font-size:15px;margin-bottom:12px}
+#pal button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 14px;min-height:54px}
+#pal small{font-weight:500;color:var(--mut);font-size:12px}
+#aibox{margin-top:14px;font-size:14px;line-height:1.55;display:none;background:#EAF3EC;border:1px solid #BCD8C2;border-radius:14px;padding:14px}

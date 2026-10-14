@@ -1,0 +1,18 @@
+/* Интерфейс конструктора: подсказки, палитра, панели */
+#coach{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5}
+#coach .cb{pointer-events:auto;background:#fffF;border-radius:20px;padding:20px 22px;max-width:300px;box-shadow:0 20px 60px #0004}
+#coach ol{margin:10px 0 14px;padding-left:20px;line-height:1.6;font-size:14px}
+#c2{position:absolute;inset:0;width:100%;height:100%;touch-action:none;display:none}
+#hc2{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+#pill button.p{background:var(--acc);color:#fff;border-color:var(--acc)}
+@media(max-width:760px){#fab{min-height:44px;padding:0 16px;font-size:13px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);right:12px}}
+.pbox{margin-top:12px;background:#F4F0E6;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
+.sws{display:flex;flex-wrap:wrap;gap:7px}
+.sw3{width:30px;height:30px;min-height:30px;padding:0;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #0003;position:relative;overflow:hidden;cursor:pointer;display:inline-block}
+.sw3.on{box-shadow:0 0 0 3px var(--acc)}
+.sw3.cust{background:conic-gradient(red,yellow,lime,aqua,blue,magenta,red)}
+.sw3.cust input{position:absolute;inset:-6px;width:42px;height:42px;opacity:0;cursor:pointer}
+.note{background:#FFF4DF;border:1px solid #E9CFA0;border-radius:14px;padding:12px 16px;font-size:14px;line-height:1.5;margin-bottom:18px}
+.gl{font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--mut);margin:14px 0 6px;text-transform:uppercase}
+#pal .gl:first-child{margin-top:0}
+#nogl{display:none;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;padding:24px;font-weight:700;z-index:6;background:#E7EEF0}

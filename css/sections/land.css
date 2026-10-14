@@ -1,0 +1,9 @@
+/* Выбор земли / схема области */
+/* land */
+#lm svg{width:100%;height:auto;display:block}
+.pt{cursor:pointer}
+.pt .dot{transition:r .2s}
+.pt:hover .dot{r:10}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pl 1.6s ease-out infinite}
+@keyframes pl{0%{transform:scale(.6);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+input[type=range]{accent-color:var(--acc);width:100%}

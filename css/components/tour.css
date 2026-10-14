@@ -1,0 +1,19 @@
+/* Прогулка внутри дома (3D-тур) */
+#tour{position:fixed;inset:0;z-index:55;background:#CFE3EE;display:none}#tour.on{display:block}
+#tcv{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
+#tp{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:10px;width:min(340px,calc(100vw - 20px));max-height:calc(100dvh - 90px);overflow:auto;background:#fffF;border-radius:20px;padding:14px;box-shadow:0 14px 40px #0004}
+#tp h3{margin:0 0 4px}#tp small{color:var(--mut);display:block;margin-bottom:6px}#tp h4{margin:12px 0 6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+#tp .r{display:flex;flex-wrap:wrap;gap:6px}#tp .r button{min-height:36px;font-size:13px;padding:0 12px}
+#tsw{display:flex;flex-wrap:wrap;gap:8px;align-items:center}#tsw i{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);cursor:pointer}#tsw i.on{outline:3px solid var(--acc);outline-offset:1px}#tsw input{width:34px;height:34px;border:0;padding:0;background:none}
+#tpad{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 74px);display:grid;grid-template-columns:repeat(3,50px);gap:6px}
+#tpad button{height:50px;min-height:50px;padding:0;touch-action:none;font-size:18px}
+#thint{position:absolute;left:12px;top:calc(env(safe-area-inset-top,0px) + 12px);background:#fffE;border-radius:12px;padding:8px 12px;font-size:12px;color:var(--mut)}
+@media (max-width:700px){#tp{max-height:40dvh}#thint{display:none}}
+#tmap{position:absolute;right:10px;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);border-radius:14px;box-shadow:0 8px 24px #0003;width:190px;height:130px}
+#tgo{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 150px);display:none;min-height:52px;padding:0 26px;font-size:16px;box-shadow:0 10px 30px #C26A1B88;z-index:3}
+#joy{position:absolute;left:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 26px);width:120px;height:120px;border-radius:50%;background:#ffffff66;border:2px solid #fff;touch-action:none;display:none}
+#joy i{position:absolute;left:35px;top:35px;width:50px;height:50px;border-radius:50%;background:#fffd;box-shadow:0 4px 14px #0004}
+@media(hover:none){#joy{display:block}}
+@media(max-width:700px){#tmap{width:130px;height:89px}#tgo{bottom:calc(env(safe-area-inset-bottom,0px) + 160px)}}
+#tfade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity .32s}
+#tp #tsw i{width:30px;height:30px}#tp h4:first-of-type{margin-top:8px}

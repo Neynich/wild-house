@@ -1,0 +1,24 @@
+/* Порядок подключения важен: более поздние файлы переопределяют ранние. */
+@import url('base/variables.css');
+@import url('base/base.css');
+@import url('components/card.css');
+@import url('components/buttons.css');
+@import url('components/forms.css');
+@import url('components/utilities.css');
+@import url('layout/header.css');
+@import url('sections/hero.css');
+@import url('sections/steps.css');
+@import url('sections/catalog.css');
+@import url('sections/land.css');
+@import url('sections/map.css');
+@import url('sections/eco.css');
+@import url('sections/faq.css');
+@import url('components/modal-drawer.css');
+@import url('layout/page.css');
+@import url('layout/progress-nav.css');
+@import url('components/model-cards.css');
+@import url('components/map-ui.css');
+@import url('components/chat.css');
+@import url('components/tour.css');
+@import url('sections/map-v2.css');
+@import url('components/telegram.css');

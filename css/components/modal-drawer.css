@@ -1,0 +1,13 @@
+/* Модальные окна, корзина-панель, уведомления, конфетти */
+/* modal & drawer */
+.md{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:16px;z-index:100}
+.md.on{display:flex}
+.mb{background:var(--bg);color:var(--ink);border-radius:24px;padding:26px;max-width:440px;width:100%;max-height:92vh;overflow:auto;animation:pop .3s}
+@keyframes pop{from{transform:scale(.92);opacity:0}}
+#dr{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:101;padding:24px;overflow:auto;transform:translateX(105%);transition:transform .35s;box-shadow:-20px 0 60px #0006}
+#dr.on{transform:none}
+#sn{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translate(-50%,40px);background:var(--dk);color:#fff;padding:14px 20px;border-radius:14px;z-index:200;opacity:0;transition:.3s;max-width:92vw;font-size:14px;line-height:1.4;pointer-events:none}
+#sn.on{opacity:1;transform:translate(-50%,0)}
+.cf{position:fixed;top:-20px;width:10px;height:14px;z-index:300;animation:cf 2.2s ease-in forwards;pointer-events:none}
+@keyframes cf{to{transform:translateY(105vh) rotate(720deg);opacity:.9}}
+.it{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px;background:#fff;font-size:14px}

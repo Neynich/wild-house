@@ -1,0 +1,2 @@
+/* Переменные темы и корневые стили */
+:root{--bg:#F4F0E6;--ink:#17261D;--mut:#4B5B51;--line:#DDD6C4;--acc:#C26A1B;--acc2:#E9A765;--dk:#12201A;--dk2:#1D3126;--grn:#8FC49A;--bad:#B3261E;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
